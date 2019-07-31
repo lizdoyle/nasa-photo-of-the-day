@@ -1,5 +1,7 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
+
+// import ApodCard from "./components/NasaCard/NasaCard"
 
 function App() {
   return (
