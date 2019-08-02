@@ -2,6 +2,7 @@ import React from "react";
 import "./App.scss";
 
 import Photo from "./components/Photo/Photo";
+import NasaCard from ".components/NasaCard/NasaCard";
 
 function App() {
   return (
