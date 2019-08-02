@@ -1,43 +1,30 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 
-import axios from "axios";
+import "./cardinfo.scss";
 
 
-function CardInfo() {
 
-    const [title, setTitle] = useState("");
-    const [copyright, setCopyright] = useState("");
-    const [date, setDate] = useState("");
-    const [explanation, setExplanation] = useState("");
 
+function CardInfo(props) {
 
     
-
-    useEffect(() => {
-        axios
-            .get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
-            .then(result => {
-                 result.data.url;
-                  console.log(result, photo)} )
-            .then(res => { 
-                res.data.title
-            })
-           
-            .catch(err => {
-
-                
-                console.log(err)
-                })
-
-
-
-        }, [])
-
+        console.log(props.title);
 
     return (
-        <>
-
-        </>
+        <div>
+            <div className="cardHeader">
+                <h3>{props.title} </h3>
+                <h4>{props.date}</h4>
+            </div>
+            <img src={props.url} />
+            <div className="cardBody">
+                <p>{props.explanation}</p>
+            </div>
+            <div className="cardCopy">
+                <p>Copyright: {props.copyright}</p>
+            </div>
+        </div>
+        
 
     )
 }

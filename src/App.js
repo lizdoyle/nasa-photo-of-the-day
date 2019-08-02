@@ -1,17 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 import "./App.scss";
 
-import Photo from "./components/Photo/Photo";
-import NasaCard from ".components/NasaCard/NasaCard";
+
+import NasaCard from './components/NasaCard/NasaCard';
+
+
 
 function App() {
+  const [card, setCard] = useState('');
+  console.log(card, setCard);
+
   return (
     <div className="App">
       <p>
         Read through the instructions in the README.md file to build your NASA
         app! Have fun !
       </p>
-      <Photo />
+      <NasaCard  />
     </div>
   );
 }

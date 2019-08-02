@@ -1,17 +1,47 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
-import Photo from "./components/Photo/Photo"
-import CardInfo from "./components/CardInfo/CardInfo";
+import "./nasacard.scss";
+
+import axios from "axios";
+
+
+
+import CardInfo from '../CardInfo/CardInfo';
 
 function NasaCard() {
-    const [card, setCard] = useState('');
+    // console.log(NasaCard);
+    const [info, setInfo] =useState('');
 
+    console.log(info);
+    // const title = setTile(result.data.title);
+
+    
+    
+
+    useEffect(() => {
+        // setInfo = ([]);
+
+        axios
+            .get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
+            .then(result => {setInfo(result.data) })
+
+            .catch(err => { console.log(err) })
+
+        }, [])
+        console.log(info.title);
 
 
     return (
-        <div className="ApodCard">
-        <Photo />
-        <CardInfo />
+        
+        <div className="NasaCard" >
+            {info ?
+                <CardInfo 
+                title={info.title} 
+                date={info.date} 
+                url={info.url} 
+                explanation={info.explanation} 
+                copyright={info.copyright}
+                /> : <div> Loading </div>}
         </div>
 
 
@@ -22,4 +52,4 @@ function NasaCard() {
 
 
 
-export default ApodCard;
+export default NasaCard;
