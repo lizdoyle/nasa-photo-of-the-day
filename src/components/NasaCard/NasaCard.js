@@ -38,7 +38,7 @@ function NasaCard() {
                 <CardInfo 
                 title={info.title} 
                 date={info.date} 
-                url={info.url} 
+                hdurl={info.hdurl} 
                 explanation={info.explanation} 
                 copyright={info.copyright}
                 /> : <div> Loading </div>}

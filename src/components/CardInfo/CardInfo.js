@@ -16,13 +16,14 @@ function CardInfo(props) {
                 <h3>{props.title} </h3>
                 <h4>{props.date}</h4>
             </div>
-            <img src={props.url} />
+            <img src={props.hdurl} />
             <div className="cardBody">
                 <p>{props.explanation}</p>
             </div>
             <div className="cardCopy">
                 <p>Copyright: {props.copyright}</p>
             </div>
+            <button>Show Photo</button>
         </div>
         
 
